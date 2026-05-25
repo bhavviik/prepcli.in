@@ -7,7 +7,7 @@ export default function BenefitsSection() {
     <section className="py-24 relative overflow-hidden">
       <div className="ghost-num" aria-hidden="true">mem</div>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimateIn variant="clip" className="mb-14">
           <div className="section-label flex items-center gap-4">
             <span className="inline-block w-6 h-px bg-subtle opacity-40" />

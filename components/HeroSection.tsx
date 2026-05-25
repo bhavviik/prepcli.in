@@ -122,7 +122,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 pt-12 pb-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8 w-full">
 
         <motion.div
           initial={{ opacity: 0, x: -12 }}
@@ -137,7 +137,7 @@ export default function HeroSection() {
         <div className="hero-title-wrap mb-3">
           <motion.h1
             className="text-fg font-normal tracking-tight leading-[0.9]"
-            style={{ fontSize: 'clamp(4rem, 11vw, 8.5rem)' }}
+            style={{ fontSize: 'clamp(4rem, 11vw, 12rem)' }}
             aria-label={TITLE}
             variants={TITLE_VARIANTS}
             initial="hidden"
@@ -249,7 +249,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 1.15, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div style={{ maxWidth: '680px' }}>
+          <div style={{ maxWidth: '820px' }}>
             <HeroTerminal />
           </div>
         </motion.div>
