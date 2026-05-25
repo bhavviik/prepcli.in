@@ -23,8 +23,12 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
         <Link
           href="/"
-          className="text-fg font-mono text-sm font-normal tracking-tight hover:text-muted transition-colors duration-200"
+          className="flex items-center gap-2 text-fg font-mono text-sm font-normal tracking-tight hover:text-muted transition-colors duration-200"
         >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" aria-hidden="true">
+            <rect width="32" height="32" rx="4" fill="currentColor" fillOpacity="0.12"/>
+            <text x="3" y="22" fontFamily="Courier New, Courier, monospace" fontSize="14" fontWeight="normal" fill="currentColor" letterSpacing="-0.5">&gt;_</text>
+          </svg>
           prepcli
         </Link>
 
