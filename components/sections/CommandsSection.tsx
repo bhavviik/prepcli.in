@@ -9,7 +9,7 @@ export default function CommandsSection() {
     >
       <div className="ghost-num" aria-hidden="true">cmd</div>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimateIn variant="clip" className="mb-6">
           <div className="section-label flex items-center gap-4">
             <span className="inline-block w-6 h-px bg-subtle opacity-40" />
@@ -24,7 +24,7 @@ export default function CommandsSection() {
           </p>
         </AnimateIn>
 
-        <AnimateIn delay={0.1} className="max-w-3xl">
+        <AnimateIn delay={0.1} className="max-w-4xl">
           <div className="code-block p-0 overflow-hidden">
             <div
               className="flex items-center gap-2 px-4 py-3"

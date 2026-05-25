@@ -20,7 +20,7 @@ export default function Nav() {
         WebkitBackdropFilter: 'blur(16px) saturate(1.1)',
       }}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-12 flex items-center justify-between">
         <Link
           href="/"
           className="text-fg font-mono text-sm font-normal tracking-tight hover:text-muted transition-colors duration-200"

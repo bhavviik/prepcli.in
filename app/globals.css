@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --color-bg:        #0a0a0a;
-  --color-surface:   #141414;
-  --color-edge:      #242424;
+  --color-bg:        #141414;
+  --color-surface:   #1c1c1c;
+  --color-edge:      #2e2e2e;
   --color-fg:        #f0f0f0;
-  --color-muted:     #b8b8b8;
-  --color-subtle:    #787878;
-  --color-dim:       #484848;
-  --color-code-bg:   #080808;
+  --color-muted:     #c0c0c0;
+  --color-subtle:    #888888;
+  --color-dim:       #555555;
+  --color-code-bg:   #111111;
 
-  --dot-color:       rgba(255,255,255,0.022);
+  --dot-color:       rgba(255,255,255,0.018);
   --grid-color:      rgba(255,255,255,0.04);
-  --glass-bg:        rgba(14, 14, 14, 0.80);
-  --glass-border:    rgba(255,255,255,0.07);
-  --glass-border-h:  rgba(255,255,255,0.13);
-  --glass-glow-h:    rgba(255,255,255,0.025);
+  --glass-bg:        rgba(20, 20, 20, 0.82);
+  --glass-border:    rgba(255,255,255,0.08);
+  --glass-border-h:  rgba(255,255,255,0.15);
+  --glass-glow-h:    rgba(255,255,255,0.028);
   --shimmer:         linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.14) 50%, rgba(255,255,255,0.08) 70%, transparent 100%);
   --code-top:        linear-gradient(90deg, transparent, rgba(255,255,255,0.07), transparent);
-  --selection-bg:    #2a2a2a;
+  --selection-bg:    #333333;
   --selection-fg:    #ffffff;
-  --scroll-thumb:    #2a2a2a;
-  --scroll-thumb-h:  #555555;
-  --color-nav-bg:    rgba(10, 10, 10, 0.88);
+  --scroll-thumb:    #333333;
+  --scroll-thumb-h:  #606060;
+  --color-nav-bg:    rgba(20, 20, 20, 0.90);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

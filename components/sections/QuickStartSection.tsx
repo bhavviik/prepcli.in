@@ -7,7 +7,7 @@ export default function QuickStartSection() {
       className="py-24 relative overflow-hidden"
       style={{ borderTop: '1px solid var(--color-edge)' }}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimateIn variant="clip" className="mb-12">
           <div className="section-label flex items-center gap-4">
             <span className="inline-block w-6 h-px bg-subtle opacity-40" />
@@ -15,7 +15,7 @@ export default function QuickStartSection() {
           </div>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
           <AnimateIn delay={0.06}>
             <div className="code-block text-xs">
               <div className="text-subtle mb-1"># install</div>

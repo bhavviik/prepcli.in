@@ -7,7 +7,7 @@ export default function FeatureStatusSection() {
       className="py-24 relative overflow-hidden"
       style={{ borderTop: '1px solid var(--color-edge)' }}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <AnimateIn variant="clip" className="mb-12">
           <div className="section-label flex items-center gap-4">
             <span className="inline-block w-6 h-px bg-subtle opacity-40" />
@@ -15,7 +15,7 @@ export default function FeatureStatusSection() {
           </div>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-2xl">
           <AnimateIn delay={0.05}>
             <div
               className="text-xs text-fg mb-6 pb-3"

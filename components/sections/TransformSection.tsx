@@ -19,7 +19,7 @@ export default function TransformSection() {
         }}
       />
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 relative z-10">
         <AnimateIn delay={0.05} variant="blur">
           <p
             className="text-fg font-normal leading-[0.92]"

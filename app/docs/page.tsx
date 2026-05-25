@@ -31,8 +31,8 @@ const sidebarLinks = [
 
 export default function DocsPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-12">
+    <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 xl:grid-cols-[240px_1fr]">
 
         <aside className="hidden md:block">
           <div className="sticky top-20 bg-bg">

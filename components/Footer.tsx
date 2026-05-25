@@ -6,7 +6,7 @@ export default function Footer() {
       className="mt-24"
       style={{ borderTop: '1px solid var(--color-edge)' }}
     >
-      <div className="max-w-5xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <div className="text-fg text-sm mb-1">prepcli</div>
