@@ -1,0 +1,6 @@
+# Cloudflare Pages redirect rules
+# Static export generates individual index.html files per route,
+# so no SPA redirects needed. This file is kept for reference.
+
+# Force HTTPS (handled by Cloudflare automatically, but explicit here)
+# http://prepcli.in/* https://prepcli.in/:splat 301
