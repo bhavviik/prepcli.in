@@ -17,30 +17,36 @@ export default function QuickStartSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
           <AnimateIn delay={0.06}>
-            <div className="code-block text-xs">
-              <div className="text-subtle mb-1"># install</div>
+            <div className="code-block text-xs leading-relaxed">
+              <div className="text-dim mb-2" style={{ fontSize: '10px' }}># 1. install globally — once, any machine</div>
               <div className="mb-1">
                 <span className="text-subtle">$</span>
                 <span className="text-fg ml-2">curl -fsSL https://prepcli.in/install.sh | bash</span>
               </div>
-              <div className="text-dim mb-4" style={{ paddingLeft: '1rem', fontSize: '10px' }}>
+              <div className="text-dim mb-5" style={{ paddingLeft: '1.25rem', fontSize: '10px' }}>
                 or: npm install -g @prepcli/prepcli
               </div>
-              <div className="text-subtle mb-1"># authenticate</div>
-              <div className="mb-4">
+
+              <div className="text-dim mb-2" style={{ fontSize: '10px' }}># 2. sign in with just your email</div>
+              <div className="mb-5">
                 <span className="text-subtle">$</span>
                 <span className="text-fg ml-2">prepcli auth login</span>
               </div>
-              <div className="text-subtle mb-1"># initialize project</div>
-              <div className="mb-4">
+
+              <div className="text-dim mb-2" style={{ fontSize: '10px' }}># 3. read your project once — remembers it forever</div>
+              <div className="mb-1">
                 <span className="text-subtle">$</span>
                 <span className="text-fg ml-2">prepcli init</span>
               </div>
-              <div className="text-subtle mb-1"># install workflow files</div>
-              <div>
+              <div className="text-subtle mb-5" style={{ paddingLeft: '1.25rem' }}>↳ context saved. never needs to repeat.</div>
+
+              <div className="text-dim mb-2" style={{ fontSize: '10px' }}># 4. add six commands to your AI tool</div>
+              <div className="mb-1">
                 <span className="text-subtle">$</span>
                 <span className="text-fg ml-2">prepcli install</span>
               </div>
+              <div className="text-subtle mb-0.5" style={{ paddingLeft: '1.25rem' }}>↳ /debug /plan /prep /refactor /review /write</div>
+              <div className="text-dim" style={{ paddingLeft: '1.25rem' }}>↳ Claude Code · Cursor · Windsurf · Antigravity</div>
             </div>
           </AnimateIn>
 

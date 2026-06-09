@@ -5,12 +5,12 @@
 :root {
   --color-bg:        #141414;
   --color-surface:   #1c1c1c;
-  --color-edge:      #2e2e2e;
-  --color-fg:        #f0f0f0;
-  --color-muted:     #c0c0c0;
-  --color-subtle:    #888888;
-  --color-dim:       #555555;
-  --color-code-bg:   #111111;
+  --color-edge:      #303030;
+  --color-fg:        #f2f2f2;
+  --color-muted:     #cccccc;
+  --color-subtle:    #999999;
+  --color-dim:       #666666;
+  --color-code-bg:   #1a1a1a;
 
   --dot-color:       rgba(255,255,255,0.018);
   --grid-color:      rgba(255,255,255,0.04);
@@ -53,26 +53,6 @@ body {
 pre, code { font-family: 'Courier New', Courier, monospace; }
 a { color: inherit; text-decoration: none; }
 
-/* Film grain — mix-blend-mode: overlay makes the grain read correctly on dark backgrounds */
-.grain-layer {
-  position: fixed;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-  pointer-events: none;
-  z-index: 9990;
-  mix-blend-mode: overlay;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  animation: grain-drift 0.35s steps(1) infinite;
-  will-change: transform;
-}
-@keyframes grain-drift {
-  0%, 100% { transform: translate(0,    0)   }
-  20%       { transform: translate(-2%, -4%) }
-  40%       { transform: translate(3%,   2%) }
-  60%       { transform: translate(-1%,  4%) }
-  80%       { transform: translate(2%,  -2%) }
-}
 
 .hero-grid {
   position: absolute;
@@ -164,9 +144,6 @@ a { color: inherit; text-decoration: none; }
 
 .shimmer-line { height: 1px; background: var(--shimmer); }
 
-@media (hover: hover) and (pointer: fine) {
-  body.cursor-ready, body.cursor-ready * { cursor: none !important; }
-}
 
 .magnetic-btn {
   position: relative;
@@ -240,7 +217,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .grain-layer,
   .hero-grid { animation: none; }
   .particle-dot { animation: none !important; }
 }

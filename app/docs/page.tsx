@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { H2, H3, P, Code, Cmd, DocCodeBlock, Flag } from '@/components/docs/Prose'
+import { H2, H3, P, Code, Cmd, DocCodeBlock, Note, CmdTable, CmdTableRow, Flag } from '@/components/docs/Prose'
+import DocsSidebar from '@/components/docs/DocsSidebar'
 
 export const metadata: Metadata = {
   title: 'docs — prepcli',
@@ -7,52 +8,12 @@ export const metadata: Metadata = {
     'prepcli command reference — install, auth, context, session, log, and record commands with examples.',
 }
 
-const sidebarLinks = [
-  { label: 'getting started',          href: '#getting-started' },
-  { label: '→ installation',           href: '#installation' },
-  { label: '→ authentication',         href: '#authentication' },
-  { label: '→ init project',           href: '#init' },
-  { label: '→ install workflows',      href: '#install-workflows' },
-  { label: '→ using slash commands',   href: '#using-slash-commands' },
-  { label: 'commands',                 href: '#commands' },
-  { label: '→ auth',                   href: '#cmd-auth' },
-  { label: '→ init',                   href: '#cmd-init' },
-  { label: '→ context',                href: '#cmd-context' },
-  { label: '→ install',                href: '#cmd-install' },
-  { label: '→ session',                href: '#cmd-session' },
-  { label: '→ log',                    href: '#cmd-log' },
-  { label: '→ record',                 href: '#cmd-record' },
-  { label: 'how it works',             href: '#how-it-works' },
-  { label: '→ context injection',      href: '#context-injection' },
-  { label: '→ decision history',       href: '#decision-history' },
-  { label: '→ decision records',       href: '#decision-records' },
-  { label: 'self-hosting',             href: '#self-hosting' },
-]
-
 export default function DocsPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 xl:grid-cols-[240px_1fr]">
 
-        <aside className="hidden md:block">
-          <div className="sticky top-20 bg-bg">
-            <div className="section-label mb-5">prepcli docs</div>
-            <nav className="flex flex-col gap-1">
-              {sidebarLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-xs text-subtle hover:text-fg transition-colors py-0.5"
-                  style={{
-                    paddingLeft: link.label.startsWith('→') ? '0.75rem' : undefined,
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </aside>
+        <DocsSidebar />
 
         <article className="min-w-0">
 
@@ -113,6 +74,23 @@ export default function DocsPage() {
             It is safe to commit. Every team member who clones the repo connects to the same
             project context automatically.
           </P>
+          <Note>
+            <div className="section-label mb-3">after init — online vs offline</div>
+            <div className="flex flex-col gap-1.5 text-muted leading-relaxed">
+              <div className="flex items-start gap-4">
+                <span className="text-subtle shrink-0" style={{ minWidth: '152px' }}>session recording</span>
+                <span>always offline · appends to <Code>.prepcli-session</Code> locally · no account needed</span>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-subtle shrink-0" style={{ minWidth: '152px' }}>context, log, sync</span>
+                <span>online only · requires internet and your account</span>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-subtle shrink-0" style={{ minWidth: '152px' }}>git push hook</span>
+                <span>shadow branch always writes · database sync skipped if offline · push never blocked</span>
+              </div>
+            </div>
+          </Note>
 
           <H3 id="install-workflows">install workflow files</H3>
           <P>
@@ -138,15 +116,14 @@ export default function DocsPage() {
             native slash commands in your AI tool. You invoke them directly in the chat or
             terminal interface — no extra terminal, no flags, no copy-paste.
           </P>
-          <DocCodeBlock>
-            <div className="text-subtle mb-2">{`# available in Claude Code, Cursor, Windsurf, and Antigravity`}</div>
-            <div className="text-fg">/debug<span className="text-dim ml-4">investigate a bug — project context loaded before the first question</span></div>
-            <div className="text-fg">/plan<span className="text-dim ml-5">plan a feature or change before writing any code</span></div>
-            <div className="text-fg">/prep<span className="text-dim ml-5">prime the AI with full context before a long task</span></div>
-            <div className="text-fg">/refactor<span className="text-dim ml-2">refactor code with project constraints enforced</span></div>
-            <div className="text-fg">/review<span className="text-dim ml-4">review a diff or PR with decision history in scope</span></div>
-            <div className="text-fg">/write<span className="text-dim ml-5">generate new code with full context and active constraints</span></div>
-          </DocCodeBlock>
+          <CmdTable label="available in Claude Code · Cursor · Windsurf · Antigravity">
+            <CmdTableRow cmd="/debug"    desc="investigate a bug — project context loaded before the first question" />
+            <CmdTableRow cmd="/plan"     desc="plan a feature or change before writing any code" />
+            <CmdTableRow cmd="/prep"     desc="prime the AI with full context before a long task" />
+            <CmdTableRow cmd="/refactor" desc="refactor code with project constraints enforced" />
+            <CmdTableRow cmd="/review"   desc="review a diff or PR with decision history in scope" />
+            <CmdTableRow cmd="/write"    desc="generate new code with full context and active constraints" />
+          </CmdTable>
           <P>
             In <strong className="text-muted font-normal">Claude Code</strong>, type the command
             in the chat panel or the in-terminal prompt. In{' '}
@@ -347,7 +324,7 @@ export default function DocsPage() {
           </DocCodeBlock>
 
           <H3 id="self-hosting-env">environment variables</H3>
-          <div className="mb-6">
+          <div className="mb-6" style={{ borderTop: '1px solid var(--color-edge)' }}>
             <Flag name="SUPABASE_URL"      desc="your Supabase project URL" />
             <Flag name="SUPABASE_ANON_KEY" desc="public anon key — safe to expose in CLI" />
           </div>

@@ -3,8 +3,6 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import SmoothScroll from '@/components/SmoothScroll'
-import CustomCursor from '@/components/CustomCursor'
-import Grain from '@/components/Grain'
 
 export const metadata: Metadata = {
   title: 'prepcli — persistent AI collaboration layer',
@@ -30,9 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Grain />
         <SmoothScroll>
-          <CustomCursor />
           <Nav />
           <main>{children}</main>
           <Footer />
