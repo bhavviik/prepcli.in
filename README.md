@@ -1,6 +1,6 @@
 # prepcli.in
 
-Website for [prepcli](https://github.com/prepcli/prepcli) — persistent AI collaboration layer.
+Website for [prepcli](https://prepcli.in) — persistent AI collaboration layer.
 
 ## Stack
 
@@ -55,15 +55,16 @@ wrangler pages deploy out --project-name prepcli-in
 
 Defined as CSS custom properties in `app/globals.css`:
 
-| Token              | Value     | Use                  |
-|--------------------|-----------|----------------------|
-| `--color-bg`       | `#0a0a0a` | Page background      |
-| `--color-surface`  | `#141414` | Card backgrounds     |
-| `--color-edge`     | `#242424` | Borders              |
-| `--color-fg`       | `#f0f0f0` | Primary text         |
-| `--color-muted`    | `#b8b8b8` | Secondary text       |
-| `--color-subtle`   | `#787878` | Tertiary text        |
-| `--color-dim`      | `#484848` | Disabled / decorative |
+| Token              | Value     | Use                   |
+|--------------------|-----------|-----------------------|
+| `--color-bg`       | `#141414` | Page background       |
+| `--color-surface`  | `#1c1c1c` | Card backgrounds      |
+| `--color-edge`     | `#303030` | Borders               |
+| `--color-fg`       | `#f2f2f2` | Primary text          |
+| `--color-muted`    | `#cccccc` | Secondary text        |
+| `--color-subtle`   | `#999999` | Tertiary text         |
+| `--color-dim`      | `#666666` | Disabled / decorative |
+| `--color-code-bg`  | `#1a1a1a` | Code block background |
 | Font               | `Courier New, Courier, monospace` | |
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for project structure and code style.

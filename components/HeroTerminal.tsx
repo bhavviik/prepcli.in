@@ -4,29 +4,34 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import type { LineType, TerminalLine } from '@/types'
 
-const COLD_LINE_START_MS = 350
-const COLD_LINE_INTERVAL_MS = 480
-const LOADING_START_MS = 4000
-const LOADING_FLASH_MS = 4500
-const WARM_PHASE_START_MS = 5000
-const WARM_LINE_START_MS = 5200
-const WARM_LINE_INTERVAL_MS = 260
-const LOOP_INTERVAL_MS = 11000
+const COLD_LINE_START_MS = 500
+const COLD_LINE_INTERVAL_MS = 700
+const LOADING_START_MS = 7000
+const LOADING_FLASH_MS = 7800
+const WARM_PHASE_START_MS = 9000
+const WARM_LINE_START_MS = 9300
+const WARM_LINE_INTERVAL_MS = 500
+const LOOP_INTERVAL_MS = 22000
 
 const COLD: TerminalLine[] = [
-  { id: 1, type: 'cmd',  text: '$ /debug' },
+  { id: 1, type: 'cmd',  text: '$ /debug  fix: users getting logged out randomly' },
   { id: 2, type: 'info', text: 'no project context found.' },
-  { id: 3, type: 'ask',  text: 'what framework are you using?' },
-  { id: 4, type: 'ask',  text: 'any constraints I should know?' },
-  { id: 5, type: 'ask',  text: 'what was decided last session?' },
+  { id: 3, type: 'ask',  text: 'what stack are you using?' },
+  { id: 4, type: 'ask',  text: 'any files or services that cannot be changed?' },
+  { id: 5, type: 'ask',  text: 'what was decided in the last session?' },
+  { id: 6, type: 'ask',  text: 'what does the error look like exactly?' },
+  { id: 7, type: 'ask',  text: 'have you tried anything already?' },
 ]
 
 const WARM: TerminalLine[] = [
-  { id: 10, type: 'cmd',   text: '$ /debug' },
-  { id: 11, type: 'data',  text: 'stack: Next.js 15 · TypeScript · tRPC' },
-  { id: 12, type: 'data',  text: 'constraints: no date-fns · auth read-only' },
-  { id: 13, type: 'data',  text: 'last session: pages/ → app/ router' },
-  { id: 14, type: 'ready', text: 'ready.' },
+  { id: 10, type: 'cmd',   text: '$ /debug  fix: users getting logged out randomly' },
+  { id: 11, type: 'data',  text: 'stack: Next.js 15 · TypeScript 5 · tRPC · Prisma' },
+  { id: 12, type: 'data',  text: 'off-limits: auth middleware is shared (legal hold)' },
+  { id: 13, type: 'data',  text: 'no date-fns · UTC+5:30 half-hour offset failures' },
+  { id: 14, type: 'data',  text: 'no lodash · bundle stays under 200kb' },
+  { id: 15, type: 'data',  text: 'JWT: sliding window refresh · 7-day hard cap' },
+  { id: 16, type: 'data',  text: 'last decision: migrated pages/ → app/ router' },
+  { id: 17, type: 'ready', text: 'context loaded. ready to diagnose.' },
 ]
 
 const LINE_COLORS: Record<LineType, string> = {
@@ -99,7 +104,7 @@ export default function HeroTerminal() {
     <div
       className="code-block"
       style={{
-        minHeight: '172px',
+        minHeight: '220px',
         transition: 'box-shadow 1.4s ease',
         boxShadow:
           phase === 'warm'
@@ -132,7 +137,7 @@ export default function HeroTerminal() {
         </AnimatePresence>
       </div>
 
-      <div style={{ minHeight: '116px' }}>
+      <div style={{ minHeight: '160px' }}>
         <AnimatePresence>
           {lines.map((line) => (
             <motion.div
