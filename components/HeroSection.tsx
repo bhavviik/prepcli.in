@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CopyCommand    from '@/components/CopyCommand'
 import MagneticButton from '@/components/MagneticButton'
-import HeroTerminal   from '@/components/HeroTerminal'
 import { ROLLING_PHRASES } from '@/lib/content'
 
 const TITLE = 'prepcli'
@@ -243,16 +242,6 @@ export default function HeroSection() {
             </motion.div>
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 1.15, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div style={{ maxWidth: '820px' }}>
-            <HeroTerminal />
-          </div>
-        </motion.div>
 
       </div>
 

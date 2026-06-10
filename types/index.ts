@@ -44,10 +44,3 @@ export interface QuickNote {
   body: string
 }
 
-export type LineType = 'cmd' | 'info' | 'ask' | 'data' | 'ready' | 'sep'
-
-export interface TerminalLine {
-  id: number
-  type: LineType
-  text: string
-}
